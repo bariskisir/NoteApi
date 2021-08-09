@@ -3,7 +3,6 @@ version: '3.4'
 services:
 
   noteapi:
-    image: noteapi
     build:
       context: .
       dockerfile: ./src/NoteApi/Dockerfile
