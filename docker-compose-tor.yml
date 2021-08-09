@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+
+  noteapi:
+    build:
+      context: .
+      dockerfile: ./src/NoteApi/Dockerfile
+    networks: 
+      - noteapi_network
+    depends_on:
+      - postgresql
+    restart: always
+    environment: 
+      - ConnectionStrings__PostgreSql=Host=postgresql;Database=note;Username=dbUser;Password=Test123456
+
+  postgresql:
+    image: postgres
+    environment: 
+      POSTGRES_PASSWORD: Test123456
+      POSTGRES_USER: dbUser
+    networks: 
+      - noteapi_network
+    restart: always
+    
+  torhiddenservice:
+    build:
+      context: ./torhiddenservice
+      dockerfile: ./Dockerfile
+    depends_on:
+      - noteapi
+    networks: 
+      - noteapi_network
+    restart: always
+
+networks:
+  noteapi_network:
+     driver: bridge
