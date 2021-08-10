@@ -24,7 +24,7 @@ docker-compose -f docker-compose-tor.yml up -d
 ```
 #### Get onion address
 ```sh
-docker exec noteapi_torhiddenservice_1 cat /var/lib/tor/hidden_service/hostname
+docker exec noteapi_hiddenservice_1 cat /var/lib/tor/hidden_service/hostname
 // phga2tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXructryd.onion
 ```
 #### Testing tor service
