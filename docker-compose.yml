@@ -17,7 +17,7 @@ services:
       - ConnectionStrings__PostgreSql=Host=postgresql;Database=note;Username=dbUser;Password=Test123456
 
   postgresql:
-    image: postgres
+    image: postgres:12.7
     environment: 
       POSTGRES_PASSWORD: Test123456
       POSTGRES_USER: dbUser
