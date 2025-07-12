@@ -26,8 +26,8 @@ services:
   hiddenservice:
     image: bariskisir/hiddenservicereverseproxy
     environment: 
-      HIDDEN_SERVICE_DIR: /var/lib/tor/hidden_service/
-      HIDDEN_SERVICE_PORT: 80 noteapi:80
+      APP_IP_DOMAIN: noteapi
+      APP_PORT: 80
     depends_on:
       - noteapi
     networks: 

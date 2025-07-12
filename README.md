@@ -22,9 +22,9 @@ git clone https://github.com/bariskisir/NoteApi.git
 cd NoteApi
 docker-compose -f docker-compose-tor.yml up -d
 ```
-#### Get onion address
+#### Get .onion address
 ```sh
-docker exec noteapi_hiddenservice_1 cat /var/lib/tor/hidden_service/hostname
+docker logs noteapi_hiddenservice_1
 // phga2tXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXructryd.onion
 ```
 ### (Option 1) Testing with Brave Browser
